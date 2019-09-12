@@ -13,6 +13,9 @@
 		<result column="src" property="src" jdbcType="VARCHAR" />
 		<result column="sort" property="sort" jdbcType="INTEGER" />
 		<result column="status" property="status" jdbcType="INTEGER" />
+		<result column="data" property="dataStr" jdbcType="VARCHAR" />
+		<result column="olddata" property="olddataStr" jdbcType="VARCHAR" />
+		<result column="ext_data" property="extdataStr" jdbcType="VARCHAR" />
 		<result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
 		<result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
 	</resultMap>

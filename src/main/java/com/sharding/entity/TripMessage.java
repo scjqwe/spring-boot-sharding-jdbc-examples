@@ -2,8 +2,11 @@ package com.sharding.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+
+import com.alibaba.fastjson.JSON;
 
 /**
  * 
@@ -49,14 +52,14 @@ public class TripMessage implements Serializable {
 	/** 消息状态 */
 	private Integer status;
 
-	// /** 新数据 */
-	// private Map<String, Object> data;
-	//
-	// /** 原数据 */
-	// private Map<String, Object> olddata;
-	//
-	// /** 扩展数据 */
-	// private Map<String, Object> extdata;
+	/** 新数据 */
+	private Map<String, Object> data;
+
+	/** 原数据 */
+	private Map<String, Object> olddata;
+
+	/** 扩展数据 */
+	private Map<String, Object> extdata;
 
 	/** 创建时间 */
 	private Date createtime;
@@ -159,6 +162,42 @@ public class TripMessage implements Serializable {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public Map<String, Object> getData() {
+		return data;
+	}
+
+	public void setData(Map<String, Object> data) {
+		this.data = data;
+	}
+
+	public void setDataStr(String data) {
+		this.data = JSON.parseObject(data, Map.class);
+	}
+
+	public Map<String, Object> getOlddata() {
+		return olddata;
+	}
+
+	public void setOlddata(Map<String, Object> olddata) {
+		this.olddata = olddata;
+	}
+
+	public void setOlddataStr(String olddata) {
+		this.olddata = JSON.parseObject(olddata, Map.class);
+	}
+
+	public Map<String, Object> getExtdata() {
+		return extdata;
+	}
+
+	public void setExtdata(Map<String, Object> extdata) {
+		this.extdata = extdata;
+	}
+
+	public void setExtdataStr(String extdata) {
+		this.extdata = JSON.parseObject(extdata, Map.class);
 	}
 
 	public Date getCreatetime() {
